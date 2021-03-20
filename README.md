@@ -10,6 +10,7 @@ With this website;
 
   - You can create your own exams based on wired.com articles easily.
   - You can test your english level by your exams.
+  - You can show and delete exams who you added.
   - Also you can test yourself by other creators's exams.
 
 In the main page when you click the titles of the articles, it expands to show content and question form of the articles. 
