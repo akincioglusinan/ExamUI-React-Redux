@@ -6,6 +6,12 @@ It offers creating English exams based on published articles of wired.com.
 
 The site is live on https://createxam.netlify.com.
 
+With this website;
+
+  - You can create your own exams based on wired.com articles easily.
+  - You can test your english level by your exams.
+  - Also you can test yourself by other creators's exams.
+
 In the main page when you click the titles of the articles, it expands to show content and question form of the articles. 
 
 You can read the website contents and take exams without authenticating. 
