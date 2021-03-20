@@ -31,6 +31,10 @@ As interface design is used React Bootstrap and Bootstrap 4.6v.
 
 For requesting from Api is used Axios library.
 
+The Web Api is designed by .Net Core which its source codes and detail descriptions are following link `https://github.com/akincioglusinan/Exam-.NetCore-WebApi-MVC`.
+
+
+
 
 
 
