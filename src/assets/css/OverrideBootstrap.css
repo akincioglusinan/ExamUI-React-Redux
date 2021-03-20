@@ -1,0 +1,9 @@
+.main-wrapper {
+  min-height: 75vh;  
+  }
+  .section {
+    height: 100%;
+  }
+  .dropdown-menu {
+    min-width: 1px !important;
+  }
