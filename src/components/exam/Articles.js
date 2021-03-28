@@ -95,26 +95,22 @@ const Articles = () => {
 
 
     return (
-        <div className="pt-5" >
+        <div className="pt-2" >
             {data.isLoading ? <SpinnerUI /> :
-
                 data.articles.map((x, indexArt) => {
-                    return <div key={indexArt} >
+                    return <div key={"articles" + indexArt} >
                         <Row >
                             <Col className="card bg-light my-3 text-center">
-                                <Button className="btn btn-light btn-block btn-sm" ><h4 id={indexArt} onClick={handleQuestion}>{x.title}</h4></Button>
+                                <Button className="btn btn-light btn-sm" ><h4 id={indexArt} onClick={handleQuestion}>{x.title}</h4></Button>
                             </Col>
                         </Row>
                         <Row>
                             <Col id={"col" + indexArt} style={{ display: "none" }} >
                                 <Form className="jumbotron" id={indexArt} onSubmit={submitExam}>
                                     <Form.Row><p>{x.content}</p></Form.Row>
-
                                     <QuestionList qList={qList} indexArt={indexArt} showCB={"none"}/>
-
                                     <QuestionForm data={data} indexArt={indexArt} question={question}
                                         handleOnChange={(e) => { handleOnChange(e) }} setQuestion={(e) => { setQuestion(e) }} />
-
                                     <Form.Row>
                                         <Col className="font-weight-bold text-center">
                                         <AlertTag error={error.message} message={data.message} />
@@ -124,7 +120,6 @@ const Articles = () => {
                                         <Col>
                                             <Button variant="success" type="submit" size="sm" id={indexArt} onClick={addQuestion}> + Add The Question</Button>
                                         </Col>
-
                                         <Col className="text-right">
                                             <Button variant="success" type="submit" size="lg">Create Exam </Button>
                                         </Col>
@@ -132,11 +127,9 @@ const Articles = () => {
                                 </Form>
                             </Col>
                         </Row>
-
                     </div>
                 })
             }
-
         </div>
     )
 }

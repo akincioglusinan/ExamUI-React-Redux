@@ -1,6 +1,7 @@
 
 import React from 'react'
-import { Container, Row, Col, NavLink, NavItem, Nav } from 'react-bootstrap'
+import { Container, Row, Col, NavItem, Nav } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 
 const Footer = () => {
   return (
@@ -25,29 +26,25 @@ const Footer = () => {
               <div className="justify-content-end">
                 <Nav className="justify-content-end">
                   <NavItem>
-                    <NavLink
-                      href="https://cvproject.netlify.com"
-                      target="_blank" rel="noreferrer"
-                    >
-                      About
-                    </NavLink>
+                    <Nav.Link as={Link} to="/about"> About
+                    </Nav.Link>
                   </NavItem>
                   <NavItem>
-                    <NavLink
+                    <Nav.Link
                       href="https://logospathos.com"
                       target="_blank" rel="noreferrer"
                     >
                       Blog
-                    </NavLink>
+                    </Nav.Link>
                   </NavItem>
 
                   <NavItem>
-                    <NavLink
-                      href="https://github.com/akincioglusinan"
+                    <Nav.Link
+                      href="https://github.com/akincioglusinan/ExamUI-React-Redux/blob/master/LICENSE"
                       target="_blank" rel="noreferrer"
                     >
                       License
-                    </NavLink>
+                    </Nav.Link>
                   </NavItem>
                 </Nav>
               </div>

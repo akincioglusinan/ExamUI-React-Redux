@@ -6,16 +6,14 @@ import {
     LOGOUT,
     SET_MESSAGE,
     CLEAR_MESSAGE,
+    SET_MESSAGE_LIST,
   } from "./types";
   
   import AuthService from "../services/auth.service";
   
   export const register = (user) => (dispatch) => {
-      debugger;
     return AuthService.register(user).then(
       (response) => {
-          console.log(response);
-          debugger;
         dispatch({
           type: REGISTER_SUCCESS,
           payload: { user: response}
@@ -23,17 +21,24 @@ import {
   
         return Promise.resolve();
       })
-      .catch(error => {
+      .catch((error) => {
         dispatch({
             type: CLEAR_MESSAGE,
           }); 
         dispatch({
           type: REGISTER_FAIL,
         });
-        dispatch({
-          type: SET_MESSAGE,
-          payload: error.response.data,
-        });
+        if(error.response.data.errors===undefined){
+          dispatch({
+            type: SET_MESSAGE,
+            payload: error.response.data,
+          });
+        }else if (error.response.status === 400) {
+          dispatch({
+            type: SET_MESSAGE_LIST,
+            payload: error.response.data.errors,
+          });
+        }
   
         return Promise.reject();
       }
@@ -53,18 +58,24 @@ import {
        
         return Promise.resolve();
       })
-      .catch(error => {
+      .catch((error) => {
         dispatch({
             type: CLEAR_MESSAGE,
           }); 
         dispatch({
           type: LOGIN_FAIL,
         });
-        dispatch({
-          type: SET_MESSAGE,
-          payload: error.response.data,
-        });
-  
+        if(error.response.data.errors===undefined){
+          dispatch({
+            type: SET_MESSAGE,
+            payload: error.response.data,
+          });
+        }else if (error.response.status === 400) {
+          dispatch({
+            type: SET_MESSAGE_LIST,
+            payload: error.response.data.errors,
+          });
+        }
         return Promise.reject();
       }
     );

@@ -1,7 +1,8 @@
-import { SET_MESSAGE, CLEAR_MESSAGE } from "../actions/types";
+import { SET_MESSAGE, CLEAR_MESSAGE, SET_MESSAGE_LIST } from "../actions/types";
 
 const initialState = {
-  message:''
+  message:'',
+  list:[]
 };
 
 const Message=(state = initialState, action) => {
@@ -11,6 +12,10 @@ const Message=(state = initialState, action) => {
     case SET_MESSAGE:
       console.log(payload,"error")
       return { message: payload };
+    
+      case SET_MESSAGE_LIST:
+        console.log(payload,"error list")
+        return { list: payload };
 
     case CLEAR_MESSAGE:
       return { message: '' };

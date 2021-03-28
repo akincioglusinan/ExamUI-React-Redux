@@ -12,6 +12,8 @@ const Header = () => {
                     <Nav className="mr-auto">
                        <Link className="nav-link" to="/">Home</Link>
                         <Link className="nav-link" to="/exams">Exams</Link>
+                        <Link className="nav-link" to="/guide">Guide</Link>
+                        <Link className="nav-link" to="/about">About</Link>
                     </Nav>
                     <AuthHeader />
                 </Navbar.Collapse>

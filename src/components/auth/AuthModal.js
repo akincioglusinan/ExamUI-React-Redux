@@ -23,7 +23,7 @@ const MyVerticallyCenteredModal = (props) => {
           </Modal.Title>
       </Modal.Header>
       <Modal.Body border="light" className="bg-light">
-        <LoginForm {...message} onSubmit={(email, password)=>{dispatch(login(email, password))}}/>
+        <LoginForm {...message} onSubmit={(email, password)=>{dispatch(login(email, password))}} onHide={props.onHide}/>
       </Modal.Body>
       <Modal.Footer>
         <Button size="sm" className="btn btn-danger" onClick={props.onHide}>Close</Button>
@@ -49,7 +49,7 @@ const MyVerticallyCenteredModal2 = (props) => {
           </Modal.Title>
       </Modal.Header>
       <Modal.Body border="light" className="bg-light">
-        <RegisterForm {...message} onSubmit={(email, password)=>{dispatch(register(email, password))}}/>
+        <RegisterForm {...message} onSubmit={(user)=>{dispatch(register(user))}} onHide={props.onHide}/>
       </Modal.Body>
       <Modal.Footer>
         <Button size="sm" className="btn btn-danger" onClick={props.onHide}>Close</Button>
