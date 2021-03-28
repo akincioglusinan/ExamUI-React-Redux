@@ -4,7 +4,7 @@
 
 It offers creating English exams based on published articles of wired.com.
 
-The site is live on https://createxam.netlify.com.
+The site is live on https://createxam.logospathos.com.
 
 With this website;
 
